@@ -12,15 +12,16 @@ jobs:
           file: package.json
           field: version
           value: 1.8.8
-      #- name: Commit files
-      #  run: |
-      #    git config --local user.email "amartyaroykumar001@gmail.com"
-      #    git config --local user.name "amartyaroy"
-      #    git status
-      #    git add -A
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Updated the package.json file
+      - name: Commit files
+        run: |
+          git config --local user.email "amartyaroykumar001@gmail.com"
+          git config --local user.name "amartyaroy"
+          git status
+          git add -A
+          git push github HEAD:${GITHUB_REF}
+      #- uses: stefanzweifel/git-auto-commit-action@v4
+      #  with:
+      #    commit_message: Updated the package.json file
 
           
           
