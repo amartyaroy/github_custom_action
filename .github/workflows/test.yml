@@ -18,8 +18,4 @@ jobs:
           git config --local user.name "amartyaroy"
           git add -A
           git commit -m "updating a JSON file"
-      - name: Push changes
-      - uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+      
