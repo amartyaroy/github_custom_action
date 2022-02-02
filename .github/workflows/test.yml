@@ -18,6 +18,7 @@ jobs:
           git config --local user.name "amartyaroy"
           git status
           git add -A
+          gi commit -m "changed package.json"
           git push HEAD:refs/heads/main
       #- uses: stefanzweifel/git-auto-commit-action@v4
       #  with:
