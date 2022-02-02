@@ -19,5 +19,5 @@ jobs:
           git status
           git add -A
           git commit -m "updating a JSON file"
-          git push
+          git push origin main
       
