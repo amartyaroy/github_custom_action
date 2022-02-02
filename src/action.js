@@ -4,8 +4,11 @@ const fs = require("fs");
 async function main() {
     try {
         let file = core.getInput('file', {required: true});
+        console.log('File',file)
         let field = core.getInput('field', {required: true});
+        console.log('field',field)
         let value = core.getInput('value', {required: true});
+        console.log('value',value)
         let parseJson = !!core.getInput('parse_json', {required: false});
         if (parseJson) {
             value = JSON.parse(value)

@@ -16,6 +16,7 @@ jobs:
         run: |
           git config --local user.email "amartyaroykumar001@gmail.com"
           git config --local user.name "amartyaroy"
+          git status
           git add -A
           git commit -m "updating a JSON file"
       
