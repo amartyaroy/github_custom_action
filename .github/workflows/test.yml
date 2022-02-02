@@ -18,7 +18,7 @@ jobs:
           git config --local user.name "amartyaroy"
           git status
           git add -A
-          git push HEAD:${GITHUB_REF}
+          git push HEAD:refs/heads/main
       #- uses: stefanzweifel/git-auto-commit-action@v4
       #  with:
       #    commit_message: Updated the package.json file
