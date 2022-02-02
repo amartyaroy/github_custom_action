@@ -1,0 +1,13 @@
+name: 'Thank you action'
+description: 'Say thank you to all new push'
+author: 'Amartya'
+
+inputs:
+  GITHUB_TOKEN:
+    description: 'Github Token'
+    required: true
+  
+
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

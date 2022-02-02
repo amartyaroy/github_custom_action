@@ -1,0 +1,24 @@
+{
+  "name": "github_custom_action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build src/action.js -o dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amartyaroy/github_custom_action.git"
+  },
+  "author": "amartya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amartyaroy/github_custom_action/issues"
+  },
+  "homepage": "https://github.com/amartyaroy/github_custom_action#readme",
+  "dependencies": {
+    "@vercel/ncc": "^0.33.1",
+    "yarn": "^1.22.17"
+  }
+}
