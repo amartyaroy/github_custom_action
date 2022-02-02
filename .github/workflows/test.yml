@@ -12,3 +12,14 @@ jobs:
           file: config.json
           field: username
           value: AXU1KOR
+      - name: Commit files
+        run: |
+          git config --local user.email "amartyaroykumar001@gmail.com"
+          git config --local user.name "amartyaroy"
+          git add -A
+          git commit -m "updating a JSON file"
+      - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
