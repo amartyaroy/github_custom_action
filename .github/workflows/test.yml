@@ -1,6 +1,6 @@
 name: Say Hello
 
-on: push
+on: [push, pull_request]
 
 jobs:
   job1:
@@ -8,3 +8,5 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: ./
+        with:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
