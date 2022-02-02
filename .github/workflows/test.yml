@@ -1,6 +1,6 @@
 name: Say Hello
 
-on: pull_request
+on: push
 
 jobs:
   job1:
@@ -9,4 +9,6 @@ jobs:
       - uses: actions/checkout@v1
       - uses: ./
         with:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          file: config.json
+          field: username
+          value: AXU1KOR

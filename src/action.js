@@ -1,20 +1,45 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
-async function run(){
-    const githubToken = core.getInput('GITHUB_TOKEN')
+const core = require("@actions/core");
+const fs = require("fs");
 
-    const ocktokit = github.getOctokit(githubToken)
+async function main() {
+    try {
+        let file = core.getInput('file', {required: true});
+        let field = core.getInput('field', {required: true});
+        let value = core.getInput('value', {required: true});
+        let parseJson = !!core.getInput('parse_json', {required: false});
+        if (parseJson) {
+            value = JSON.parse(value)
+        }
 
-    const { context = {} } = github
-    const {pull_request} = context.payload
+        let data = fs.readFileSync(file, 'utf8');
+        let obj = JSON.parse(data);
+        let root = obj;
 
-    await octokit.rest.issues.createComment({
-        ...context.repo,
-        issue_number: pull_request.number,
-        body:'Thank you for submitting a pull request!We will try to review it ASAP',
-      });
+        let parts = field.split(".");
+        parts.forEach((part, index) => {
+            let isLastItem = index === parts.length - 1;
+            if (isLastItem) {
+                obj[part] = value;
+            } else {
+                obj[part] = obj[part] || {}
+                obj = obj[part];
+            }
+        });
 
-    console.log("Hello world")
+        data = JSON.stringify(root, null, 2);
+        fs.writeFileSync(file, data, 'utf8');
+
+    } catch (error) {
+        core.setFailed(error.message);
+        throw error;
+    }
 }
 
-run()
+if (require.main === module) {
+    main()
+        .then(() => process.exit(0))
+        .catch(e => {
+            console.error(e);
+            process.exit(1);
+        });
+}

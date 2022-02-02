@@ -2,7 +2,7 @@
   "name": "github_custom_action",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "ncc build src/action.js -o dist",
     "test": "echo \"Error: no test specified\" && exit 1"
