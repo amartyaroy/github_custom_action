@@ -11,19 +11,16 @@ jobs:
         with:
           file: config.json
           field: username
-          value: "test123"
+          value: "trita"
       - name: Commit files
         run: |
           git config --local user.email "amartyaroykumar001@gmail.com"
           git config --local user.name "amartyaroy"
           git status
           git add -A
-          git commit -am "changed1 package.json"
+          git commit -am "changed config.json"
           git push 
-      #- uses: ad-m/github-push-action@v0.6.0
-      #  with:
-      #    github_token: ${{github.token}}
-
+     
           
           
       
