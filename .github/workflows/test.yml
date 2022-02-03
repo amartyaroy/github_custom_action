@@ -19,10 +19,10 @@ jobs:
           git add -A
           git status
           gi commit -am "changed1 package.json"
-      #   git push HEAD:refs/heads/main
-      - uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{github.token}}
+          git push 
+      #- uses: ad-m/github-push-action@v0.6.0
+      #  with:
+      #    github_token: ${{github.token}}
 
           
           
