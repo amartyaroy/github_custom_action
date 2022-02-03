@@ -18,7 +18,7 @@ jobs:
           git config --local user.name "amartyaroy"
           git status
           git add -A
-          gi commit -m "changed package.json" -a
+          gi commit -am "changed package.json"
       #   git push HEAD:refs/heads/main
       - uses: ad-m/github-push-action@v0.6.0
         with:
