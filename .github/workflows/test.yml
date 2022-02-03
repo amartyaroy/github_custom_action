@@ -11,7 +11,7 @@ jobs:
         with:
           file: config.json
           field: username
-          value: "abcdefef"
+          value: "testing changes"
       - name: Commit files
         run: |
           git config --local user.email "amartyaroykumar001@gmail.com"
