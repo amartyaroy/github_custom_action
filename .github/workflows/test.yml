@@ -12,14 +12,14 @@ jobs:
           file: config.json
           field: username
           value: "trivial"
-      - name: Commit files
-        run: |
-          git config --local user.email "amartyaroykumar001@gmail.com"
-          git config --local user.name "amartyaroy"
-          git status
-          git add -A
-          git commit -am "changed config.json"
-          git push 
+      #- name: Commit files
+      #  run: |
+      #    git config --local user.email "amartyaroykumar001@gmail.com"
+      #    git config --local user.name "amartyaroy"
+      #    git status
+      #    git add -A
+      #    git commit -am "changed config.json"
+      #    git push 
      
           
           
