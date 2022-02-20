@@ -1,4 +1,5 @@
 const core = require("@actions/core");
+const { Octokit } = require("@octokit/core");
 const fs = require("fs");
 
 async function main() {
@@ -14,6 +15,15 @@ async function main() {
             value = JSON.parse(value)
         }
 
+        //creating instance of Ocktokit
+        const octokit = new Octokit({ auth: `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` });
+        const response = await octokit.request("GET /repos/{owner}/{repo}", {
+          owner: "amartyaroy",
+          repo: "github_custom_action",
+        });
+        console.log('response',response)
+
+        
         let data = fs.readFileSync(file, 'utf8');
         let obj = JSON.parse(data);
         let root = obj;
