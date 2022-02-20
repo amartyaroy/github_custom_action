@@ -3,7 +3,9 @@ const { Octokit } = require("@octokit/core");
 const fs = require("fs");
 
 async function main() {
+    // main function is called from the action.yml file
     try {
+        //getting the inputs for the action 
         let file = core.getInput('file', {required: true});
         console.log('File',file)
         let field = core.getInput('field', {required: true});
@@ -26,6 +28,7 @@ async function main() {
         
         let data = fs.readFileSync(file, 'utf8');
         let obj = JSON.parse(data);
+        console.log('Data from file', obj)
         let root = obj;
 
         let parts = field.split(".");
