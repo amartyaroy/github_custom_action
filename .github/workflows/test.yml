@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Env Variables
-        run: Set
+        run: printenv
       - uses: actions/checkout@v2
       - uses: ./
         with:
